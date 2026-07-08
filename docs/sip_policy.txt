@@ -1,0 +1,7 @@
+SIP Pause allows customers to temporarily stop SIP installments.
+
+SIP Pause is allowed only for Monthly, Quarterly and Annual SIPs.
+
+Weekly and Daily SIPs cannot be paused.
+
+SIP Cancel permanently stops a SIP.

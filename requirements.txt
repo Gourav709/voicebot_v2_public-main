@@ -1,0 +1,33 @@
+python-dotenv==1.0.1
+pydantic==2.7.4
+rich==13.7.1
+rapidfuzz==3.9.3
+requests==2.32.3
+numpy==1.26.4
+sounddevice==0.4.7
+soundfile==0.12.1
+webrtcvad==2.0.10
+faster-whisper==1.0.3
+
+# Async support
+aiohttp==3.9.5
+
+# Audio denoising
+noisereduce==3.0.2
+scipy==1.11.4
+
+# Optional: for MP3 decoding
+pydub==0.25.1
+
+# Analytics and reporting
+pandas==2.1.4
+openpyxl==3.1.2
+
+# Deepgram STT (used when STT_PROVIDER=deepgram)
+# No extra package needed — uses requests (already listed above)
+# Optional: install the official SDK for streaming support later
+# deepgram-sdk==3.7.1
+
+# Sarvam AI TTS (used when TTS_PROVIDER=sarvam)
+# No extra package needed — uses requests + base64 (stdlib)
+# Official SDK if preferred: sarvamai==0.1.0

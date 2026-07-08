@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSP Voice Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0a0e17;
+    --surface:   #111827;
+    --surface2:  #1a2235;
+    --border:    #1e2d45;
+    --accent:    #0057b8;
+    --accent2:   #0078ff;
+    --green:     #00c896;
+    --red:       #ff4757;
+    --yellow:    #ffa502;
+    --text:      #e8edf5;
+    --muted:     #5a6a85;
+    --user-col:  #60a5fa;
+    --bot-col:   #34d399;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── Header ── */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .dsp-logo {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .brand-text h1 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+
+  .brand-text p {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: all 0.3s;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--muted);
+    transition: background 0.3s;
+  }
+
+  .status-pill.connected .status-dot { background: var(--green); }
+  .status-pill.connected { color: var(--green); border-color: rgba(0,200,150,0.2); }
+  .status-pill.listening .status-dot { background: var(--yellow); animation: pulse 1s infinite; }
+  .status-pill.listening { color: var(--yellow); border-color: rgba(255,165,2,0.2); }
+  .status-pill.speaking .status-dot { background: var(--accent2); animation: pulse 0.6s infinite; }
+  .status-pill.speaking { color: var(--accent2); border-color: rgba(0,120,255,0.2); }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* ── Main layout ── */
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  /* ── Conversation panel ── */
+  .conversation-panel {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .panel-header-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent2);
+  }
+
+  .transcript-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 0;
+  }
+
+  .transcript-area::-webkit-scrollbar { width: 4px; }
+  .transcript-area::-webkit-scrollbar-track { background: transparent; }
+  .transcript-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .turn-block {
+    animation: fadeUp 0.3s ease;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .turn-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .turn-label.user { color: var(--user-col); }
+  .turn-label.bot  { color: var(--bot-col); }
+
+  .turn-bubble {
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.55;
+    max-width: 90%;
+  }
+
+  .turn-bubble.user {
+    background: rgba(96, 165, 250, 0.08);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-bottom-left-radius: 3px;
+  }
+
+  .turn-bubble.bot {
+    background: rgba(52, 211, 153, 0.07);
+    border: 1px solid rgba(52, 211, 153, 0.12);
+    border-bottom-left-radius: 3px;
+  }
+
+  .turn-meta {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .partial-text {
+    color: var(--muted);
+    font-size: 13px;
+    padding: 8px 14px;
+    font-style: italic;
+    animation: fadeUp 0.2s ease;
+  }
+
+  /* ── Terminal panel ── */
+  .terminal-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #080c14;
+  }
+
+  .terminal-header {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .terminal-dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .terminal-dots span {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .terminal-dots span:nth-child(1) { background: #ff5f57; }
+  .terminal-dots span:nth-child(2) { background: #febc2e; }
+  .terminal-dots span:nth-child(3) { background: #28c840; }
+
+  .terminal-title {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    margin-left: 4px;
+  }
+
+  .terminal-log {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    min-height: 0;
+  }
+
+  .terminal-log::-webkit-scrollbar { width: 4px; }
+  .terminal-log::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .log-line { animation: fadeUp 0.2s ease; white-space: pre-wrap; word-break: break-all; }
+  .log-line.info    { color: #64748b; }
+  .log-line.user    { color: var(--user-col); }
+  .log-line.bot     { color: var(--bot-col); }
+  .log-line.system  { color: var(--yellow); }
+  .log-line.error   { color: var(--red); }
+  .log-line.latency { color: #94a3b8; }
+  .log-line.filler  { color: #6366f1; }
+  .log-line.barge   { color: var(--red); }
+
+  /* ── Bottom bar ── */
+  .bottom-bar {
+    padding: 16px 28px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+
+  .call-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 24px;
+    position: relative;
+  }
+
+  .call-btn.start {
+    background: var(--green);
+    box-shadow: 0 0 0 0 rgba(0,200,150,0.4);
+  }
+
+  .call-btn.start:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 12px rgba(0,200,150,0.1);
+  }
+
+  .call-btn.end {
+    background: var(--red);
+    box-shadow: 0 0 0 0 rgba(255,71,87,0.4);
+    animation: ring 1.5s infinite;
+  }
+
+  @keyframes ring {
+    0%   { box-shadow: 0 0 0 0 rgba(255,71,87,0.4); }
+    70%  { box-shadow: 0 0 0 14px rgba(255,71,87,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,71,87,0); }
+  }
+
+  .call-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  .call-info {
+    text-align: center;
+  }
+
+  .call-info p {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .call-timer {
+    font-family: 'DM Mono', monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: 2px;
+  }
+
+  /* ── Waveform viz ── */
+  .waveform {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 32px;
+  }
+
+  .wave-bar {
+    width: 3px;
+    border-radius: 2px;
+    background: var(--accent2);
+    transition: height 0.1s;
+    min-height: 3px;
+  }
+
+  /* ── Latency badges ── */
+  .latency-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+  }
+
+  .latency-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+  }
+
+  .latency-badge.good   { color: var(--green);  border-color: rgba(0,200,150,0.2); }
+  .latency-badge.ok     { color: var(--yellow); border-color: rgba(255,165,2,0.2); }
+  .latency-badge.slow   { color: var(--red);    border-color: rgba(255,71,87,0.2); }
+
+  .empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--muted);
+  }
+
+  .empty-icon { font-size: 36px; opacity: 0.3; }
+  .empty-text { font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <div class="dsp-logo">DSP</div>
+    <div class="brand-text">
+      <h1>DSP Voice Assistant</h1>
+      <p>AI-powered Mutual Fund Customer Service</p>
+    </div>
+  </div>
+  <div class="status-pill" id="statusPill">
+    <div class="status-dot"></div>
+    <span id="statusText">Disconnected</span>
+  </div>
+</header>
+
+<div class="main">
+
+  <!-- Conversation -->
+  <div class="conversation-panel">
+    <div class="panel-header">
+      <div class="panel-header-dot"></div>
+      Conversation
+    </div>
+    <div class="transcript-area" id="transcriptArea">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">🎙</div>
+        <div class="empty-text">Press Call to start a conversation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terminal -->
+  <div class="terminal-panel">
+    <div class="terminal-header">
+      <div class="terminal-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="terminal-title">bot — pipeline log</span>
+    </div>
+    <div class="terminal-log" id="terminalLog">
+      <div class="log-line info">$ DSP Voice Bot — ready to start</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom-bar">
+  <div class="waveform" id="waveform">
+    <!-- bars injected by JS -->
+  </div>
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+    <button class="call-btn start" id="callBtn" onclick="toggleCall()">📞</button>
+    <span style="font-size:11px; color:var(--muted)">Click to call</span>
+  </div>
+
+  <div class="call-info">
+    <div class="call-timer" id="callTimer">00:00</div>
+    <p id="callInfoText">Ready</p>
+  </div>
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+let ws            = null;
+let mediaStream   = null;
+let audioCtx      = null;
+let processor     = null;
+let callActive    = false;
+let callStart     = null;
+let timerInterval = null;
+let turnCount     = 0;
+
+const SR          = 16000;
+const FRAME_SIZE  = 512;
+
+// ── Waveform setup ─────────────────────────────────────────────────────────
+const waveform = document.getElementById('waveform');
+const NUM_BARS = 20;
+for (let i = 0; i < NUM_BARS; i++) {
+  const bar = document.createElement('div');
+  bar.className = 'wave-bar';
+  bar.style.height = '3px';
+  waveform.appendChild(bar);
+}
+
+function animateWave(active) {
+  const bars = waveform.querySelectorAll('.wave-bar');
+  if (!active) {
+    bars.forEach(b => b.style.height = '3px');
+    return;
+  }
+  bars.forEach(b => {
+    const h = Math.random() * 26 + 3;
+    b.style.height = h + 'px';
+    b.style.background = h > 20 ? 'var(--green)' : 'var(--accent2)';
+  });
+}
+
+// ── UI helpers ─────────────────────────────────────────────────────────────
+function setStatus(state, text) {
+  const pill = document.getElementById('statusPill');
+  const txt  = document.getElementById('statusText');
+  pill.className = 'status-pill ' + state;
+  txt.textContent = text;
+}
+
+function log(msg, cls = 'info') {
+  const term = document.getElementById('terminalLog');
+  const line = document.createElement('div');
+  line.className = 'log-line ' + cls;
+  const ts = new Date().toTimeString().slice(0, 8);
+  line.textContent = `[${ts}] ${msg}`;
+  term.appendChild(line);
+  term.scrollTop = term.scrollHeight;
+}
+
+function addTurn(role, text, meta = null) {
+  const area = document.getElementById('transcriptArea');
+  document.getElementById('emptyState')?.remove();
+
+  const block = document.createElement('div');
+  block.className = 'turn-block';
+
+  const label = document.createElement('div');
+  label.className = 'turn-label ' + role;
+  label.textContent = role === 'user' ? 'You' : 'Naina';
+  block.appendChild(label);
+
+  const bubble = document.createElement('div');
+  bubble.className = 'turn-bubble ' + role;
+  bubble.textContent = text;
+  block.appendChild(bubble);
+
+  if (meta) {
+    const metaEl = document.createElement('div');
+    metaEl.className = 'turn-meta';
+    metaEl.textContent = meta;
+    block.appendChild(metaEl);
+  }
+
+  area.appendChild(block);
+  area.scrollTop = area.scrollHeight;
+}
+
+function updatePartial(text) {
+  let partial = document.getElementById('partialText');
+  if (!partial) {
+    partial = document.createElement('div');
+    partial.id = 'partialText';
+    partial.className = 'partial-text';
+    document.getElementById('transcriptArea').appendChild(partial);
+  }
+  partial.textContent = '…' + text;
+  document.getElementById('transcriptArea').scrollTop = 9999;
+}
+
+function clearPartial() {
+  document.getElementById('partialText')?.remove();
+}
+
+function updateTimer() {
+  const elapsed = Math.floor((Date.now() - callStart) / 1000);
+  const m = String(Math.floor(elapsed / 60)).padStart(2, '0');
+  const s = String(elapsed % 60).padStart(2, '0');
+  document.getElementById('callTimer').textContent = `${m}:${s}`;
+}
+
+function latencyBadge(ms, label) {
+  const cls = ms < 400 ? 'good' : ms < 800 ? 'ok' : 'slow';
+  return `<span class="latency-badge ${cls}">${label} ${ms}ms</span>`;
+}
+
+// ── Audio: browser mic → PCM16 → WebSocket ─────────────────────────────────
+async function startMic() {
+  mediaStream = await navigator.mediaDevices.getUserMedia({ audio: {
+    sampleRate: SR, channelCount: 1, echoCancellation: true, noiseSuppression: true
+  }});
+
+  audioCtx = new AudioContext({ sampleRate: SR });
+  const source = audioCtx.createMediaStreamSource(mediaStream);
+  processor = audioCtx.createScriptProcessor(FRAME_SIZE, 1, 1);
+
+  let waveTimer = null;
+
+  processor.onaudioprocess = (e) => {
+    if (!ws || ws.readyState !== WebSocket.OPEN) return;
+    const float32 = e.inputBuffer.getChannelData(0);
+
+    // Convert float32 → int16
+    const int16 = new Int16Array(float32.length);
+    for (let i = 0; i < float32.length; i++) {
+      int16[i] = Math.max(-32768, Math.min(32767, float32[i] * 32768));
+    }
+    ws.send(int16.buffer);
+
+    // Animate waveform
+    clearTimeout(waveTimer);
+    animateWave(true);
+    waveTimer = setTimeout(() => animateWave(false), 150);
+  };
+
+  source.connect(processor);
+  processor.connect(audioCtx.destination);
+}
+
+function stopMic() {
+  if (processor)     { processor.disconnect(); processor = null; }
+  if (audioCtx)      { audioCtx.close(); audioCtx = null; }
+  if (mediaStream)   { mediaStream.getTracks().forEach(t => t.stop()); mediaStream = null; }
+  animateWave(false);
+}
+
+// ── Audio: WebSocket binary → browser speaker ──────────────────────────────
+let playCtx    = null;
+let playQueue  = [];
+let isPlaying  = false;
+let nextPlayAt = 0;
+
+function initPlayCtx() {
+  if (!playCtx) playCtx = new AudioContext({ sampleRate: SR });
+}
+
+function enqueueAudio(pcm16Buffer) {
+  initPlayCtx();
+  const int16    = new Int16Array(pcm16Buffer);
+  const float32  = new Float32Array(int16.length);
+  for (let i = 0; i < int16.length; i++) float32[i] = int16[i] / 32768.0;
+
+  const buf = playCtx.createBuffer(1, float32.length, SR);
+  buf.getChannelData(0).set(float32);
+  playQueue.push(buf);
+  if (!isPlaying) schedulePlay();
+}
+
+function schedulePlay() {
+  if (playQueue.length === 0) { isPlaying = false; return; }
+  isPlaying = true;
+  const buf    = playQueue.shift();
+  const src    = playCtx.createBufferSource();
+  src.buffer   = buf;
+  src.connect(playCtx.destination);
+  const now    = playCtx.currentTime;
+  const start  = Math.max(now, nextPlayAt);
+  src.start(start);
+  nextPlayAt = start + buf.duration;
+  src.onended = schedulePlay;
+}
+
+// ── WebSocket events ────────────────────────────────────────────────────────
+function connectWS() {
+  const proto = location.protocol === 'https:' ? 'wss' : 'ws';
+  ws = new WebSocket(`${proto}://${location.host}/ws`);
+  ws.binaryType = 'arraybuffer';
+
+  ws.onopen = () => {
+    log('WebSocket connected', 'system');
+    setStatus('connected', 'Connected');
+  };
+
+  ws.onmessage = (e) => {
+    if (e.data instanceof ArrayBuffer) {
+      // Binary = TTS audio from bot
+      enqueueAudio(e.data);
+      setStatus('speaking', 'Bot speaking');
+    } else {
+      // JSON = event
+      const ev = JSON.parse(e.data);
+      handleEvent(ev);
+    }
+  };
+
+  ws.onclose = () => {
+    log('WebSocket disconnected', 'error');
+    setStatus('', 'Disconnected');
+    if (callActive) endCall();
+  };
+
+  ws.onerror = () => log('WebSocket error', 'error');
+}
+
+function handleEvent(ev) {
+  switch (ev.type) {
+
+    case 'status':
+      log(ev.msg, 'system');
+      if (ev.msg === 'Bot ready') setStatus('listening', 'Listening');
+      break;
+
+    case 'user_text':
+      clearPartial();
+      addTurn('user', ev.text);
+      log(`You [${ev.language || ''}]: ${ev.text}`, 'user');
+      turnCount++;
+      document.getElementById('callInfoText').textContent = `Turn ${turnCount}`;
+      setStatus('listening', 'Processing…');
+      break;
+
+    case 'bot_text':
+      addTurn('bot', ev.text, ev.intent ? `(${ev.intent}${ev.faq_id ? ' · ' + ev.faq_id : ''})` : null);
+      log(`Bot [${ev.intent || ''}]: ${ev.text}`, 'bot');
+      setStatus('speaking', 'Bot speaking');
+      break;
+
+    case 'partial':
+      updatePartial(ev.text);
+      setStatus('listening', 'Listening…');
+      break;
+
+    case 'latency':
+      const badges = [];
+      if (ev.llm)   badges.push(latencyBadge(Math.round(ev.llm * 1000),   'LLM'));
+      if (ev.tts)   badges.push(latencyBadge(Math.round(ev.tts * 1000),   'TTS'));
+      if (ev.total) badges.push(latencyBadge(Math.round(ev.total * 1000), 'Total'));
+      const row = document.createElement('div');
+      row.className = 'latency-row';
+      row.innerHTML = badges.join('');
+      document.getElementById('transcriptArea').appendChild(row);
+      log(`⏱ LLM ${ev.llm ? (ev.llm*1000).toFixed(0) : '?'}ms  TTS ${ev.tts ? (ev.tts*1000).toFixed(0) : '?'}ms  Total ${ev.total ? (ev.total*1000).toFixed(0) : '?'}ms`, 'latency');
+      setStatus('listening', 'Listening');
+      break;
+
+    case 'filler':
+      log('🎵 filler…', 'filler');
+      break;
+
+    case 'barge_in':
+      log('⚡ Barge-in detected', 'barge');
+      break;
+
+    case 'silence_prompt':
+      log(`Silence prompt ${ev.count}/${ev.max}`, 'system');
+      break;
+
+    case 'handoff':
+      log('📞 Handover initiated', 'system');
+      addTurn('bot', '📞 Transferring to senior representative…');
+      break;
+
+    case 'error':
+      log('ERROR: ' + ev.msg, 'error');
+      break;
+
+    case 'greeting':
+      addTurn('bot', ev.text);
+      log('Bot [greeting]: ' + ev.text, 'bot');
+      break;
+  }
+}
+
+// ── Call control ────────────────────────────────────────────────────────────
+async function toggleCall() {
+  if (!callActive) await startCall();
+  else endCall();
+}
+
+async function startCall() {
+  try {
+    await startMic();
+    connectWS();
+    callActive = true;
+    callStart  = Date.now();
+    nextPlayAt = 0;
+
+    const btn = document.getElementById('callBtn');
+    btn.textContent = '📵';
+    btn.className = 'call-btn end';
+    document.querySelector('.bottom-bar span').textContent = 'Click to end';
+
+    timerInterval = setInterval(updateTimer, 1000);
+    log('Call started — mic active', 'system');
+    setStatus('connected', 'Connecting…');
+
+  } catch (err) {
+    log('Mic error: ' + err.message, 'error');
+    alert('Microphone access denied. Please allow mic access and try again.');
+  }
+}
+
+function endCall() {
+  callActive = false;
+  clearInterval(timerInterval);
+
+  if (ws) { ws.send(JSON.stringify({type: 'stop'})); ws.close(); ws = null; }
+  stopMic();
+
+  const btn = document.getElementById('callBtn');
+  btn.textContent = '📞';
+  btn.className = 'call-btn start';
+  document.querySelector('.bottom-bar span').textContent = 'Click to call';
+
+  setStatus('', 'Disconnected');
+  log('Call ended', 'system');
+  animateWave(false);
+}
+</script>
+</body>
+</html>

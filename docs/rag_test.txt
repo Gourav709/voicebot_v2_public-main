@@ -1,0 +1,7 @@
+DSP Special SIP Rules
+
+SIP Pause requests are approved within 48 hours.
+
+The maximum SIP Pause period is 6 installments.
+
+The internal reference code starts with SP-.

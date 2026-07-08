@@ -1,0 +1,782 @@
+[
+  {
+    "source": "test_rag.txt",
+    "text": "The office cafeteria serves purple pizza every Friday.\n\nEmployees must wear a green hat on Wednesdays.\n\nThe company mascot is a dancing penguin named Rocky."
+  },
+  {
+    "source": "sip_policy.txt",
+    "text": "SIP Pause allows customers to temporarily stop SIP installments.\n\nSIP Pause is allowed only for Monthly, Quarterly and Annual SIPs.\n\nWeekly and Daily SIPs cannot be paused.\n\nSIP Cancel permanently stops a SIP."
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": "FAQs – SIP Pause & SIP Cancel\nWhat is SIP Pause?\nSIP Pause allows you to temporarily stop your SIP installments for a limited period without cancelling the SIP completely.\nWhat is SIP Cancel?\nSIP Cancel permanently stops your SIP. Once cancelled, same SIP cannot be restarted and new SIP has to be re"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": "gistered.\nWhich SIPs are eligible for Cancel?\nSIP Pause and Cancel are allowed for all SIPs registered via Online, Offline, Exchange and channel partner mode.\nWhich SIPs are eligible for Pause?\nSIP Pause and Cancel are allowed for all SIPs registered via Online, Offline mode. Exchange and channel pa"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": "rtner mode are not allowed to pause via RTA journey.\nAre all SIP frequencies allowed for Pause?\nNo. SIP Pause is allowed only for Monthly, Quarterly, and Annual SIPs. Weekly and Daily SIPs cannot be paused. These are subject to AMC/RTA validation. User will see the validation message on UI.\nAre Week"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": "ly and Daily SIPs allowed for Cancel?\nYes. SIP Cancel is allowed for all frequencies, including Daily and Weekly SIPs.\nFrom where SIP Pause or Cancel request can be initiated?\nDistributor (MFD) can initiate the request from systematic plans section inside MF reports or CRM.\nAre joint holder folios s"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": "upported?\nNo. SIP Pause and Cancel are not allowed for joint holder folios.\nWhat folio types are allowed?\nSingle holder, Any one or Survivor, and Minor folios are allowed.\nFor how many installments SIP can be paused?\nSIP can be paused for up to 3 installments.\nWhen will SIP pause or cancellation tak"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": "e effect?\nThe effective date is decided by AMC/RTA and will be shown to you before approval.\nWhat happens to installments before the effective date?\nAny installments scheduled before the effective date will be processed as planned.\nHow will client approve a SIP Pause or Cancel request?\nClient will r"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": "eceive an approval link on email/SMS. Approval requires OTP verification.\nHow long is the approval link valid?\nThe approval link is valid for 24 hours.\nWhat status will be shown after a Pause or Cancel is proposed?\nThe SIP will be tagged as “SIP Pause / Cancel Request proposed, client authentication"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": " pending” until you approve the request.\nWhat if the client has approved but RTA update is pending?\nThe SIP will continue to show the same tag, with the message “SIP Pause Request approved by client, awaiting data update from RTA” in the View Details section.\nCan a proposed Pause or Cancel request b"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": "e cancelled?\nYes. While client approval is pending, the proposed Pause or Cancel request can be cancelled.\nWhere will SIP appear after approval?\nPaused SIPs will move to the Paused section. Cancelled SIPs will move to the Ceased section once update is received in RTA reports. Currently the update is"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": " received anywhere between T+3 to T+7 days.\nWill MFD receive confirmation after approval?\nYes. MFD will receive an email confirming whether the SIP Pause or Cancel request was successful or failed.\nIs OTP mandatory for approval?\nYes. OTP verification is mandatory for approving SIP Pause or Cancel re"
+  },
+  {
+    "source": "SIP_Pause_and_Cancel_FAQs_v2[37].docx",
+    "text": "quests.\nCan employees of MFD have access to SIP pause and cancel?\nYes. Under employee management section, user can enable permissions for SIP pause and cancel transactions, and employee can do SIP pause and cancel for the assigned clients. \n"
+  },
+  {
+    "source": "FAQs - Download Centre[15].docx",
+    "text": "Download Centre – FAQs\nQ1: What is the Download Centre?\nA: The Download Centre is a single place in the CE app where you can find and download all the reports you’ve requested. Instead of waiting for emails or staying on a page while a report is being generated, all your downloads are queued here. Y"
+  },
+  {
+    "source": "FAQs - Download Centre[15].docx",
+    "text": "ou can also share report links directly on WhatsApp.\nQ2: Where can I find the Download Centre?\nA: You can access the Download Centre from:\nWeb: Left menu > Download Centre\nMobile: Bottom menu > More > Download Centre\nQ3: How long will my download links work?\nA: Download links are valid for 7 days. A"
+  },
+  {
+    "source": "FAQs - Download Centre[15].docx",
+    "text": "fter that, the link expires and you’ll need to request the report again.\nQ4: How do I request a report?\nA: Just click the Download button on any report table. The system will queue your request and show a confirmation pop-up once it’s submitted.\nQ5: Will I get a notification when my report is ready?"
+  },
+  {
+    "source": "FAQs - Download Centre[15].docx",
+    "text": "\nA: Not at the moment. You can check the file status directly in the Download Centre. In the future, you’ll receive notifications via email or WhatsApp once the file is ready.\nQ6: Can I share reports on WhatsApp?\nA: Yes. Each completed report has a WhatsApp share button, so you can easily share the "
+  },
+  {
+    "source": "FAQs - Download Centre[15].docx",
+    "text": "download link with others.\nQ7: Why can’t I see the Download Centre in my menu?\nA: Access depends on your user role. If your role doesn’t have Download permission enabled, the menu won’t be visible. Please contact your Compoundexpress Account Admin (Intermediary) to update your access.\nQ8: If I updat"
+  },
+  {
+    "source": "FAQs - Download Centre[15].docx",
+    "text": "e an employee’s role, when will the changes apply?\nA: Access changes take effect immediately.\nQ9: In which format will the reports be downloaded?\nA: Most reports are downloaded in Excel (.xlsx) format. Some reports, like Client 360, are available in PDF format.\nQ10: Will the downloaded file reflect "
+  },
+  {
+    "source": "FAQs - Download Centre[15].docx",
+    "text": "the filters I applied on the screen?\nA: No. The downloaded file will include all data for the selected time period and investor, regardless of any filters applied on the screen.\nQ11: What happens if I download the same report more than once?\nA: There are currently no restrictions—you can request the"
+  },
+  {
+    "source": "FAQs - Download Centre[15].docx",
+    "text": " same report multiple times.\nQ12: What is the “Request Ref No”?\nA: It’s a unique reference number for each download request. If you face any issues, share this number with the helpdesk for faster support.\nQ13: Can I track the progress of large files?\nA: Yes. While a file is being generated, you’ll s"
+  },
+  {
+    "source": "FAQs - Download Centre[15].docx",
+    "text": "ee an hourglass icon showing that the request is in progress."
+  },
+  {
+    "source": "service_requests.txt",
+    "text": "Service Requests can be raised through the Mutual Funds section.\n\nInvestors receive a review link through SMS or Email.\n\nService Requests are processed within 3 business days."
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "FAQs\nService Request – General\nQ1. How can I access the Service Request section?\nA. The Service Request section can be accessed via: Left Menu > Mutual Funds > Service Request.\n\nQ2. How can I raise a Service Request for my clients?\nA. On the main landing page of the Service Request section, click th"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "e ‘Add Service Request’ button located in the top right corner. A list of available service requests will be displayed. You can select any of them to initiate a request.\n\n\nThe process of raising a service request is as follows:\nRequest Initiation by the MFD:\nSelect the client by searching for their "
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "name in the search bar.\nChoose the relevant service request and provide the required details.\nSend the request to the investor for approval.\nThe investor will receive an email (with a Review button) and an SMS (containing a link) to approve the request from compoundexpress.\nInvestor Authorization Pr"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ocess:\nThe investor can access the request details by clicking the Review button in the email or the link provided in the SMS.\nUpon clicking the Review button or link, the request approval page will open, displaying the request details.\nThe investor can either:\nApprove the request by clicking the Co"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "nfirm button, or\nReject the request by clicking the Reject button.\nDepending on the type of service request, the investor may be required to provide additional details.\nApprove the request using the OTP received from MFCentral on the folio-registered mobile number.\nOnce successfully authorized, the "
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "request may take up to 3 business days to be processed.\nThe investor will receive a confirmation via email and SMS from compoundexpress upon successful submission of the service request. The MFD will also receive a confirmation email from compoundexpress once the request is approved by the investor."
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "\nUpon successful processing of the request at MFCentral, the investor will also receive communication directly from the respective AMCs.\nQ3. What is the TAT (Turnaround Time) for completion of a service request?\nIt may take up to 3 business days for a request to be processed.\nQ4. How can I track the"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": " status of a service request raised?\nA. Yes, MFDs can track the status of a service request from the landing page of the Service Request section by following these steps:\nNavigate to the Service Request section landing page.\nUnder the Recent Service Requests section, previously raised requests will "
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "be listed.\nClick on the three dots icon under the Actions column and select View Details from the dropdown.\nIn the right-side hover panel, check the Updates section for the status and details of the service request.\nQ5. For how long is the Service Request history available?\nA. Currently, the Service"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": " Request history is available for the last 3 months only.\n\nService Request – Consolidation of Folios\nQ1. What is Consolidation of Folios and why is it needed?\nConsolidation of Folios is the process of merging multiple folios held with the same mutual fund house into a single folio. This is often nee"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ded when, due to multiple account opening requests, separate folios are created unintentionally. Consolidating your folios helps streamline your investments, making it easier to track, manage, and transact – all from a single folio.\nQ2. What is a target folio?\nA target folio is the folio that will b"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "e retained after the consolidation of your folios.\nQ3. What is a source folio?\nSource folios are the folios that will be merged into the target folio after the successful execution of the consolidation request.\nQ4. What type of folios are eligible for Consolidation of Folios?\nCurrently, only folios "
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "with a single mode of holding and tax status as 'Individual' are eligible for the Consolidation of Folios request.\nQ5. What are the conditions/criteria for submitting a request for Consolidation of Folios?\nOnly those folios within a particular AMC can be consolidated that have matching email ID, mob"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ile number, bank account, holding type, tax status, and nominee details. For KFin, there is an additional criterion that source folios should not have any active SIPs ongoing.\nQ6. What will happen to the source folios? Can the investor reuse them for future transactions?\nNo. Once the source folios a"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "re consolidated, they become ineligible for transactions or holding units and will not be available for selection during the transaction journey.\nQ7. Can I request consolidation at the scheme level?\nNo. Consolidation of folios is done for all holdings (schemes) in the source folios.\n\nService Request"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": " – Add / Edit Nominees\nQ1. How many nominees can I add?\nA. You can add up to a maximum of 3 nominees to a particular folio.\nQ2. Who can I add as a nominee?\nA. You can add your blood relatives or spouse as nominees. If you wish to add someone else, please select the ‘Others’ option and proceed.\nQ3. C"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "an I add a minor as a nominee?\nA. Yes. However, if you add a minor as a nominee, it is mandatory to provide the details of the nominee’s guardian.\nQ4. What type of folios are eligible for an Add/Edit Nominee request?\nA. Currently, only folios with a single mode of holding and tax status as 'Individu"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "al' are eligible for the Add/Edit nominee service request.\nQ5. Is it mandatory to provide details like Date of Birth or Address of each nominee?\nA. Yes. Due to recent regulatory changes, this information is mandatory. If the nominee is a minor, the guardian’s details are also required.\nQ6. Can I sel"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ect multiple folios for adding/updating nominee details?\nA. Yes. An MFD can select multiple folios in a single request to update nominee details, provided the selected folios have the same registered Email ID and Mobile Number.\nQ7. Does a nominee need to be KYC compliant?\nA. No, KYC compliance is no"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "t mandatory at the time of adding or updating a nominee. However, investors are required to provide ID details (such as PAN, Aadhaar, Driving License, or Passport) as part of the KYC-related information. The nominee must be KYC compliant at the time of making a claim.\n\nService Request – Change Bank "
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "Account\nQ1. What is Change Bank Account and why is it needed?\nA. It is the process of updating the registered bank account in an investor's folio to ensure seamless processing of redemption amounts, lump sum purchases, SIP payments, and more. Changing the bank account linked to your mutual fund inve"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "stments can be essential when switching banks, closing an account, or managing finances more effectively.\nQ2. A folio has multiple bank accounts registered under it. Which bank account will be updated if a \"Change Bank Account\" request is processed?\nA. The Change Bank Account request will update onl"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "y the primary/folio-registered bank account details.\nQ3. What details and documents are required from the investor while raising a Change Bank Account request?\nA. The investor must provide the following inputs:\nBank account details of the new bank account to be added.\nScanned copy of a cheque from t"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "he existing folio-registered bank account (JPEG/JPG image or PDF).\nScanned copy of a cheque from the new bank account (JPEG/JPG image or PDF).\nInvestor declaration: A clear image or PDF capturing the signature and name of the investor.\nQ4. What type of folios are eligible for a Change Bank Account?\n"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "A. Currently, only folios with single mode of holding and tax status marked as ‘Individual’ are eligible for the Change Bank Account request.\nQ5. What are the conditions/criteria for submitting a Change Bank Account request?\nA. Only those folios that have matching bank account number, IFSC, email ID"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": ", mobile number, holding type, and tax status will be grouped and submitted in a single request.\nQ6. Are there any restrictions on initiating a Change Bank Account request?\nA. Yes, currently there is a limit of INR 10 lakh at the PAN level. A Change Bank Account request cannot be raised for investor"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "s with current holdings exceeding INR 10 lakh (at the PAN level).\n\nService Request – Add Bank Account\nQ1. What is the Add Bank Account service and why is it needed?\nA. The Add Bank Account service allows an investor to register an additional bank account in their folio. This ensures seamless process"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ing of redemption amounts, lump sum purchases, SIP payments, and other transactions through any of the registered bank accounts. An investor can register up to 5 bank accounts in a folio, with one designated as the default account.\nQ2. Can I change my default or primary bank account in the folio usi"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ng the Add Bank Account service?\nA. No. The default or primary bank account in the folio cannot be changed using the Add Bank Account service. To update your primary bank account details, you need to submit a request through the Change Bank Account service.\nQ3. What details and documents are require"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "d from the investor while raising an Add Bank Account request?\nA. The investor must provide the following inputs:\nBank account details of the new bank account to be added.\nScanned copy of a cheque from the folio-registered primary bank account (in JPEG/JPG or PDF format).\nScanned copy of a cheque fr"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "om the new bank account (in JPEG/JPG or PDF format).\nQ4. What type of folios are eligible for the Add Bank Account?\nA. Currently, only folios with a single mode of holding and tax status marked as ‘Individual’ are eligible for the Add Bank Account request.\nQ5. What are the conditions/criteria for su"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "bmitting an Add Bank Account request?\nA. Only those folios with matching details – including bank account number, IFSC, email ID, mobile number, holding type, and tax status – will be grouped and submitted under a single request.\nQ6. Are there any restrictions on initiating an Add Bank Account reque"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "st?\nA. Yes. Currently, there is a limit of INR 10 lakh at the PAN level. An Add Bank Account request cannot be raised if the investor’s total holdings exceed INR 10 lakh (at the PAN level).\n\nService Request – Update Contact Details\nQ1. What is the Update Contact Details service and why is it needed?"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "\nA. The Update Contact Details service allows investors to update or modify their registered email address and mobile number in their folio. This ensures that investors continue to receive timely transaction alerts, regulatory communications, OTPs, and other important updates from RTAs and the respe"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ctive AMCs.\nQ2. If an investor wants to update the mobile number registered in the folio, how will compoundexpress validate the authenticity of the request?\nA. To authorize the request, validation will be done by triggering two OTPs:\nIn the case of updating the mobile number, the first OTP will be s"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ent to the folio-registered email ID, followed by a second OTP to the new mobile number.\nIn the case of updating the email ID, the first OTP will be sent to the folio-registered mobile number, followed by a second OTP to the new email ID.\nQ3. What type of folios are eligible for the Update Contact D"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "etails service?\nA. Currently, only folios that meet the following criteria are eligible:\nBoth email ID and mobile number are registered.\nMode of holding is ‘Single.’\nTax status is marked as ‘Individual.’\nQ4. What are the conditions/criteria for submitting an Update Contact request?\nA. Only those fol"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ios with matching details – email ID, mobile number, holding type, and tax status – will be grouped and submitted under a single request.\nQ5. Why does the investor need to authenticate the new email ID/mobile number using OTP?\nA. Investment-related information is highly sensitive and should not reac"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "h unintended recipients. To ensure the security of this information, RTAs need to verify the investor’s new email ID/mobile number through OTP authentication. OTP verification helps RTAs ensure that the details are captured correctly and enables the investor to receive all relevant information accur"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "ately and on time.\n\nQ6. The investor has multiple folios registered with the same email ID and mobile number combination. Can the investor select only a few of them to update the email ID or mobile number?\nA. No. Currently, this facility is not available on compoundexpress. Any update request will r"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "esult in a change of the email ID/mobile number across all linked folios.\nQ7. The investor is trying to update the email ID, but the existing mobile number is not accessible or working, and vice versa. How will the investor be able to authenticate?\nA. In such cases, the investor must first update th"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "e mobile number and then place a request to update the email ID. If both contact details are not available, the investor will need to follow the physical, form-based process for updating the details.\nQ8. If the investor raises a request to update the mobile number, will the request authorization lin"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "k be sent to the old mobile number?\nA. No. In the Update Contact Details request, the authorization link is sent only to the contact detail that is not being updated.\nIf the mobile number is being updated, the request authorization link will be sent only to the registered email ID.\nIf the email ID i"
+  },
+  {
+    "source": "FAQs - NFTs - 25th Aug 2025[26].docx",
+    "text": "s being updated, the request authorization link will be sent only to the registered mobile number.\n\n"
+  },
+  {
+    "source": "download_centre.txt",
+    "text": "Download Centre stores generated reports.\n\nDownload links remain valid for 7 days.\n\nReports can be shared through WhatsApp."
+  },
+  {
+    "source": "rag_test.txt",
+    "text": "DSP Special SIP Rules\n\nSIP Pause requests are approved within 48 hours.\n\nThe maximum SIP Pause period is 6 installments.\n\nThe internal reference code starts with SP-."
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "Module Section FAQs User onboarding Signup 1. How is my mobile number and email address validated?  a. To validate your mobile number and email address, we use separate one-time passwords (OTPs) sent to the respective contact methods provided during sign-up. This extra layer of security helps us ens"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ure that the contact information you've provided is accurate and belongs to you. 2. What if I don't receive the OTP for mobile or email validation?  a. If you don't receive the OTP for mobile or email validation, please check your spam or junk folders. If you still haven't received the OTP after a f"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ew minutes, you can request a resend option. Make sure to double-check the accuracy of the mobile number and email address you've provided. 3. Can I access my compoundexpress account from multiple devices?  a. Yes, you can access your compoundexpress account from multiple devices, including smartpho"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "nes, tablets, and computers. Simply log in using your registered email address or mobile number and password to access your account securely from any compatible device with internet connectivity.  Login / Forgot password 1. How do I log in to my Compounexpress account?  a. To log in to your Compound"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "express account, simply visit our website or open our mobile app and enter your registered email address or mobile number along with your password. Upon entering your credentials, you'll be prompted to complete a two-factor authentication (2FA) process for added security. 2. What is two-factor authe"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ntication (2FA)? a. Two-factor authentication (2FA) is an additional layer of security designed to ensure that only authorized users can access their accounts. In addition to your password, 2FA \nrequires you to provide a second form of verification, typically a one-time password (OTP) sent to your r"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "egistered contact details. 3. What if I don't receive the OTP for 2FA during login?  a. If you don't receive the OTP for 2FA during login, please check your mobile inbox or email spam folder. If you still haven't received the OTP after a few minutes, you can request a resend option. Ensure that the "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "contact details you've provided are accurate and up to date. 4. What should I do if I forget my password?  a. If you forget your password, simply click on the \"Forgot Password\" link on the login page. You'll be prompted to enter your registered email address. After verifying your identity, you'll re"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ceive a one-time password (OTP) via SMS or email to reset your password. 5. How does the forgot password process work?  a. When you initiate the forgot password process and enter your registered email address, a one-time password (OTP) will be sent to the respective contact details provided. You'll "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "then use this OTP to verify your identity and create a new password for your compoundexpress account. Product Offering Mutual fund 1. What is Compoundexpress ?  a. Compoundexpress is a comprehensive digital platform that offers a range of financial services, including mutual fund distribution, to pr"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ovide seamless investment solutions for clients. Our platform is designed to simplify investment processes and enhance the overall experience for distributors and their clients. 2. . How can Compoundexpress benefit mutual fund distributors? Compoundexpress offers several benefits for mutual fund dis"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "tributors, including: o Streamlined onboarding and KYC processes for clients. o Real-time tracking and management of mutual fund portfolios. o Access to a wide range of mutual funds from various fund houses. \no Advanced analytical tools and reports to assist in investment decisions. o Seamless trans"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "action processing and customer support. 3. How can I get started with mutual fund as a distributor on Compoundexpress?  a. To get started with mutual fund, click on Activate Product and enable Mutual fund as a product by providing details like ARN and RTA consent to fetch the data. 4. How does Compo"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "undExpress enhance business growth for MFDs? CompoundExpress offers a powerful platform that helps MFDs reach more clients, streamline transactions, and provide comprehensive reporting tools, driving both client acquisition and revenue growth. 5. We are comfortable doing transactions with other chan"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "nels i.e. BSE/NSE/MFU how will the data be available to us?  Irrespective of the mode of transaction the data will be pushed to us by the RTA and the same will be available to you for viewing.  6. We have transacted through BSE/NSE in the past can I transact in the same folios and funds on CE?  Yes,"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " there are no restrictions on transactions.  Product activation RTA consent 1. Why do I have to provide RTA consent? a. Your consent is crucial for compoundexpress to access your data from RTAs, which includes WBR and MFSD reports from CAMS and Kfintech. We will process your data to generate reports"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " and insights, enhancing our services. 2. How do I give consent, and why is an OTP required?  a. To give consent, you need to confirm using a one-time password (OTP) sent to your registered mobile number by the RTAs. The OTP serves as a secure method to verify your identity and ensures that you are "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "willingly granting permission for data access.  3. Can I revoke my consent at any time?  \na. Yes, you have the right to revoke your consent at any time. You can manage your consent settings through your account preferences.  4. How often is data updated after consent is provided? Data will be regula"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "rly updated based on the frequency allowed by the RTAs and the platform’s integration with them. Typically, this happens daily, ensuring that MFDs have access to the most up-to-date information. 4. Is my data used for any purpose other than analysis and service improvement?  a. No, the primary purpo"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "se of accessing your data is for analysis to enhance our services. Your data will not be used for any other purpose without your explicit consent.  Contract esign 1. Why do I need to eSign the contract? As a Mutual Fund Distributor, signing the contract is a mandatory step to activate Mutual Fund se"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "rvices on our platform. It ensures compliance with regulatory requirements and establishes terms for transactions and reporting. 2. What is the consent process, and why is it required? The consent process allows us to fetch your Mutual Fund data from RTAs (Registrar & Transfer Agents) for reporting "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "and transaction facilitation. This consent is verified via OTP authentication before proceeding with the eSign. 3. How do I complete the eSign process? Once you provide the necessary details and complete the consent process, you will be redirected to an eSign portal in a new tab. Authenticate using "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "your Aadhaar-linked mobile number and complete the digital signing. 4. What happens if I don’t complete the eSign process? You must complete the eSign within 7 days. If not completed within this period, your consent will be revoked, and you will have to restart the entire process. \n5. What should I "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "do if my Aadhaar is not linked to my mobile number? If your Aadhaar is not linked to a mobile number, you can download the contract, physically sign it (wet signature), and upload the scanned copy. 6. For corporate ARNs, who needs to eSign the agreement? For corporate ARNs, the Authorised Signatory "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "(AS) listed in the KYD (Know Your Distributor) records must complete the eSign process. If multiple signatories are required, each AS will receive a contract link, and the final document will include all signatures. 7. How can I check the status of my eSign process? You can check your eSign status o"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "n your dashboard. If pending, you will see an alert with a \"Complete Signing Now\" CTA to resume the process. 8. Where is the signed agreement stored? Once successfully signed, the agreement is securely stored on our SFTP server under the respective RTA folder for validation and compliance purposes. "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "9. Will I receive reminders for completing my eSign? Yes, you will receive periodic reminders via email and SMS if your eSign process remains incomplete. 10. Whom should I contact for assistance with eSign or consent issues? For any issues related to eSign or consent, please reach out to our support"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " team at support@compoundexpress.com  Revoke 1. What does revoking consent mean? Revoking consent means that you, as a Mutual Fund Distributor (MFD), are withdrawing your authorization for the platform to access your mutual fund data from RTAs \n(CAMS/KFin). This will result in the loss of access to "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "Mutual Fund reports and transaction services on the platform. 2. Can I revoke consent for only one RTA instead of both? Yes, you can choose to revoke consent for either CAMS or KFin separately or revoke consent for both RTAs at the same time. 3. What happens after I revoke my consent? Once consent i"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "s revoked: • You will no longer receive updated mutual fund reports or transactions from the RTAs. • Your access to mutual fund-related features on the platform will be restricted. • You will receive notifications via email and SMS confirming the revocation. • If you revoke for one RTA only, you wil"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "l still have access to the other RTA’s reports and transactions. 4. How long does it take to process my revoke request? The revoke request typically takes 4-5 working days to process. You will receive notifications via email and SMS once the revocation is complete. 5. How do I initiate a revoke cons"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ent request? You can initiate the revoke request from the platform's UI by navigating to the consent section and selecting the revoke option for the respective RTA(s). 6. What will be the process of revoke once the request is raised from the UI? Once you raise a revoke request from the UI: • A Servi"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ce Request (SR) will be generated in the backend. • The Customer Service team will contact you to take a recorded confirmation of your revoke request. • If you confirm, the revoke request will be processed, and you will be notified via email and SMS. • If you decide to cancel the revoke request, you"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " can do so directly from the UI before final processing. \n8. Can I cancel my revoke request after submitting it? Yes, you can cancel the revoke request from the UI before the final processing. 9. What features will be affected after revoking consent? • You will lose access to mutual fund reports and"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " transaction history from the revoked RTA(s). • Your ability to perform transactions (like purchase, redemption, or SIPs) on the platform will be disabled. • You will see alerts prompting you to reactivate consent to regain access. 10. Will my transaction history be deleted after revocation? Your hi"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "storical transactions on the platform will be archived for audit purposes and retained for at least 7 years. However, RTA-specific report data will be deleted upon revoke confirmation. 11. How can I regain access after revoking consent? To regain access, you need to reactivate consent by going back "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "to the consent section and approving data access again for the respective RTA(s). 12. What happens if my subscription expires? If your subscription expires and is not renewed within 30 days, consent will be automatically revoked, and your data will be deleted as per policy. 13. Will my consent be re"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "voked if I don’t log in for a long time? Yes, if you have not logged into the platform for more than a year, your consent will be automatically revoked, and data deletion will follow. Transactions Kyc 1. What if I don't have a DigiLocker account? a. If you don't have a DigiLocker account, you need t"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "o enter your Aadhaar number and complete the authentication via OTP. You will receive the OTP on your Aadhaar-linked mobile number. Once the verification is complete, your DigiLocker account gets activated immediately. 2. What if I am not able to connect to my DigiLocker account? a. If you are not a"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ble to connect to your DigiLocker, you can upload your POA manually \nand proceed with the video KYC method. Below are the POA options to upload in case of video KYC. i. Passport ii. Voter ID iii. Driving licence. 3. What is Aadhaar eSign? a. As per SEBl's new regulations, it's mandatory for users wh"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "o are yet to complete KYC verification for mutual funds to digitally sign the KYC application. You will be asked to enter the OTP sent to the mobile number you've linked to your Aadhaar card to digitally sign the document. 4. How long will it take for the customer KYC to be completed?  Once all the "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "formalities for the KYC are completed, the KYC will get completed in a few minutes   MFD success page 1. What if my client didn’t receive email within 10 minutes? a. Ask your client to check the spam or junk folder in that case. The email may also go to Updates or Promotional folders. We recommend t"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "hat your client should categorize our email as important to ensure these emails go to Inbox in future. 2. When will the transaction get processed? • Purchase (Lumpsum): o Transactions authorized before the cut-off time of the respective scheme(s) on a business day are typically processed the same da"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "y. o However, the final NAV application depends on the day the payment is realized in the AMC's account. Transactions authorized after the cut-off time are processed on the next business day. • SIP (Systematic Investment Plan): o SIP transactions are processed on specific dates chosen by the investo"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "r (SIP dates). o The NAV application is subject to the SIP amount being realized in the AMC's account. \n• SWP (Systematic Withdrawal Plan) and STP (Systematic Transfer Plan): o These transactions are processed on specific dates selected by the investor (or next business day if it’s a non business da"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "y on the specified date), and the NAV applicable on the transaction date is used for the withdrawal or transfer of units. 3. How will the transactions get routed?  All the transactions will get routed through MF Central.  Declarations 1. What is FATCA?  a. FATCA (Foreign Account Tax Compliance Act) "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "is a United States federal law aimed at preventing tax evasion by U.S. citizens and residents through the use of foreign accounts. It requires foreign financial institutions to report information about financial accounts held by U.S. taxpayers to the Internal Revenue Service (IRS). 2. Who needs to c"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "omply with FATCA?  a. All mutual fund investors, including individuals and entities, who are U.S. citizens, U.S. residents, or entities with substantial U.S. ownership need to comply with FATCA. Even non-U.S. investors may need to provide certain information to determine their FATCA status. 3. What "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "is a nominee declaration?  a. A nominee declaration allows mutual fund investors to designate one or more individuals (maximum 3) who will receive the benefits of their investment in the event of the investor's demise. This ensures that the investment proceeds are smoothly transferred to the designa"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ted beneficiaries. 4. Why should I appoint a nominee for my mutual fund investments?  a. Appointing a nominee ensures that your investment benefits are transferred to your chosen beneficiary without any legal hassles. It simplifies the process for your family or dependents during an already difficul"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "t time. \n Payments 1. What all options are available for transaction payment? a. For Lumpsum you can pay via UPI or Netbanking and for SIP you will have to register a mandate specific to CAMS and KFIN. 2. Can I change my payment type while authorising the transaction? a. Yes, you can change the paym"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ent method and bank account while authorising the transaction. You can click on the Change Payment Method button and follow the instruction to change the payment method and bank account. 3. What if my account is debited but the transaction has failed? a. First, don’t worry. This usually happens beca"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "use of a payment failure at your bank’s end or at times even due to poor internet connectivity. Rest assured, if your account has been debited, units will be allotted after receiving a confirmation from your bank. If your units are not allotted within 2-3 days, your money will be refunded. You can c"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ontact us at support@compoundexpress.com for any queries  Mandates 1. What is an eNACH? eNACH (Electronic National Automated Clearing House) is an online authorization process that allows investors to provide their bank details for automatic SIP payments. This mandate enables the bank to debit the i"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "nvestor's account on the chosen SIP date without manual intervention. 2. Why is an eNACH mandate required for SIP transactions? An eNACH mandate ensures that the SIP payments are processed automatically and on time, eliminating the need for investors to manually authorize payments each time. It is a"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " secure and reliable method for facilitating recurring investments. 3. What are different types of mandates available on compoundexpress? a. There are 2 types of RTA mandates available on compoundexpress, CAMS and KFINtech. \neach mandate can be used to make SIP payments for an AMC serviced by that p"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "articular RTA. 4. When will my SIP payments be debited from my bank account after the mandate is created? Once the eNACH mandate is approved, the SIP amount will be automatically debited from your bank account on the chosen SIP date as per the frequency you select (monthly, quarterly, etc.). 5. How "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "long does it take for the eNACH mandate to be activated? A: The eNACH mandate is typically activated immediately once authorised. Investor will receive a confirmation once it is successfully activated. 6. We have mandates for our customers registered on BSE/NSE/MFU can we use the same mandates on CE"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "?  Since the mandates are registered on a different platform they cannot be used on CE, however, you can continue to transact on BSE/NSE and the transactions will be available/visible on CE.  7. Why does investor need to register two mandates for the two RTAs why can we not set one mandate like BSE?"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "  We are a software provider and money collection is carried out by respective AMCs, where we will use through payment gateways. Since there is no single entity allowed to collect money for both the RTAs hence the mandates must be set separately. The process is efficient.  8. How many banks currentl"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "y support eNACH? 33 banks (authorised by NPCI) currently support eNACH. Here is a list for your quick reference: CAMS Mandate Bank List  1. Andhra Bank 2. AU Small Finance Bank 3. Axis Bank Ltd 4. Bank of Baroda \n5. Bank of Maharashtra 6. Canara Bank 7. Central Bank of India 8. City Union Bank 9. De"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "utsche Bank AG 10. Development Credit Bank Ltd 11. Dhanlaxmi Bank Ltd 12. Equitas Small Finance Bank Ltd 13. Federal Bank Ltd 14. HDFC Bank Ltd 15. ICICI Bank Ltd 16. IDBI Bank Ltd 17. IDFC Bank Ltd 18. Indian Overseas Bank 19. IndusInd Bank 20. Karnataka Bank Ltd 21. Kotak Mahindra Bank Ltd 22. Ori"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ental Bank of Commerce. 23. Paytm Payments Bank Ltd 24. Prime Cooperative Bank Ltd 25. Punjab National Bank 26. Ratnakar Bank Ltd 27. South Indian Bank Ltd 28. Standard Chartered Bank Ltd 29. State Bank of India 30. Tamilnad Mercantile Bank Ltd 31. The Cosmos Coop Bank Ltd 32. Union Bank of India 33"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": ". Yes Bank  KFIN Mandate Bank list  1. Andhra Bank 2. AU Small Finance Bank 3. Axis Bank Ltd 4. Bank of Baroda 5. Bank of Maharashtra 6. Canara Bank 7. Central Bank of India 8. City Union Bank 9. Deutsche Bank AG 10. Development Credit Bank Ltd 11. Dhanlaxmi Bank Ltd \n12. Equitas Small Finance Bank "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "Ltd 13. Federal Bank Ltd 14. HDFC Bank Ltd 15. ICICI Bank Ltd 16. IDBI Bank Ltd 17. IDFC Bank Ltd 18. Indian Overseas Bank 19. IndusInd Bank 20. Karnataka Bank Ltd 21. Kotak Mahindra Bank Ltd 22. Oriental Bank of Commerce. 23. Paytm Payments Bank Ltd 24. Prime Cooperative Bank Ltd 25. Punjab Nationa"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "l Bank 26. Ratnakar Bank Ltd 27. South Indian Bank Ltd 28. Standard Chartered Bank Ltd 29. State Bank of India 30. Tamilnad Mercantile Bank Ltd 31. The Cosmos Coop Bank Ltd 32. Union Bank of India 33. Yes Bank Product Offering LAMF 1. What is Loan against Mutual Fund? a. Loan against mutual funds (L"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "AMF) allows your clients to borrow cash against mutual fund investments as collateral. Your clients can use compoundexpress to lien mark mutual funds digitally to avail an instant limit without losing the ownership of mutual funds and all the associated benefits with it.  b. Clients can select from "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "a list of 4500+ approved mutual funds from different asset management companies (AMCs) in India. They can lien mark mutual funds registered with both CAMS & K, Registrars & Transfer Agents (RTAs). 2. How can I get started with Loan against mutual fund as a distributor on compoundexpress?  a. To get "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "started with Loan against mutual fund, click on Activate Product and enable Loan against Mutual fund as a product by providing details like Name, Mobile, Email, ARN (optional). \n3. How does compoundexpress offer Loan against Mutual Fund? a. Loan against Mutual Fund offering on compoundexpress is pow"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ered by Volt Money platform. Volt Money offers loans through multiple NBFC’s and take care of assessing credit limit that can be offered, KYC process, bank verification process, lien/unlien marking process, mandate setup process and loan withdrawal and repayment. 4. Eligibility criteria to avail a L"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "oan against Mutual Fund a. Client should be an Indian resident. b. Client should be between 18 and 65 years of age c. Clients mutual fund portfolio eligible for loan against mutual funds, should not be less than ₹50,000 d. Loan against mutual funds is available for mutual funds approved with CAMS & "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "K (RTAs). Debt & ELSS funds (units held greater than 3 years) are also eligible for loan against mutual funds e. Loan against mutual funds is also available for joint holdings with AS / ES (anyone survivor / either or survivor) mode of holding. f. There is no minimum credit score and income requirem"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ent for loan against mutual funds 5. How much credit can my client avail? a. Client can choose to set up a credit line amount ranging from Rs. 25,000 to Rs. 1 crore for loan against mutual funds 6. How does the loan against mutual fund facility work? a. Funds will be made available in the form of an"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " overdraft facility. Clients can utilize the required amount and repay anytime without any prepayment charges.  b. Client can choose any date of the month for monthly interest repayment. c. The loan against mutual funds credit line facility provides 100% flexibility for principal repayment at any ti"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "me during the tenure of the \nloan. Interest is charged only on the utilized amount and for the duration the funds are utilized. After the month ends, only the interest needs to be repaid. 7. What are the documents/credentials required for availing Loan against Mutual Fund? a. The entire process is 1"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "00% digital, so there is no requirement for any physical documents for loan against mutual funds. To ensure a smooth and quick processing, please have the following information handy: § PAN card number § Email ID associated with CAMS and K (for mutual fund verification) § Aadhaar card number and Dig"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ilocker PIN for KYC document fetching § Bank account details for account verification and receiving the loan amount § Debit card or net banking details for setting up the mandate. 8. What is lien marking/pledging of Mutual Funds? a. When your client opts for a loan against your mutual fund units, ou"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "r partner digitally lien marks/pledges their mutual fund units in the favour of the lender. This ensures that the units cannot be redeemed or sold until the loan amount is repaid. The lien marking process is conducted entirely digitally and in real-time for loan against mutual funds. 9. Can my clien"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "t lien mark any mutual fund units of their choice? a. Our platform offers complete flexibility when it comes to choosing the mutual fund units your clients want to lien mark for setting up the loan limit. They have the freedom to choosing the schemes and units according to their preferences and crea"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "te their own allocation for lien marking. 10. When will the lien marking on my client's funds be removed? a. Your clients have the flexibility to request the removal of lien from their mutual fund units at \nany time, provided there is no pending loan amount against them. Depending on their current l"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "oan amount and utilization, they can choose to remove the lien from specific mutual fund units or from all the units they have pledged. MF Reporting AUM Reports 1. Where can I see my AUM Reports? a. Go to Left menu > Mutual Funds > Reports > AUM Reports 2. What are the different reports does the pla"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "tform offer for AUM Reports? a. The platform offers a variety of reports, including: i. AUM overall summary ii. AMC wise AUM overview and allocations iii. Individual AMC level AUM details iv. Fund level AUM details v. Asset Class & Category wise AUM allocation vi. Sector & Security level exposure of"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " AUM  3. Can I customize the reports? a. You can apply filters on various tables and charts present in the report to analyse the reports. The facility to create custom reports is not present currently. 4. How often are the reports updated? a. The data points present in the reports are being updated "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "on each business day after the posting cycle of respective RTAs is completed. 5. How does the platform access my data? a. As part of the onboarding process, you have provided us consent to fetch your data from the respective RTAs and the same gets updated on each business day after the posting cycle"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " of respective RTAs is completed. 6. Who can access these reports? a. Only authorized users can access this data. Authorised users include the MFD and those employees of MFD whom they have extended the access of Compoundexpress platform. The \nMFD has full control on which user can access which featu"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "re of the platform. 7. I can see error in the data being displayed. How can I report this? a. While we are fetching all your data directly from the RTAs to provide you glitch free experience, there can be a possibility that we may have interpreted any data point incorrectly due to multiple reasons. "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "For all such cases, you can share your concern with us on this email id – support@compoundexpress.com (to be confirmed).  Systematic Plan Reports 1. Where can I see my Systematic Plan reports? a. Go to Left menu > Mutual Funds > Reports > Systematic Plans 2. What are the different reports does the p"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "latform offer for Systematic Plans? a. The platform offers a variety of reports, including: i. Systematic Plan overall summary (including SIPs, STPs and SWPs) ii. Systematic Investment Plans (SIPs) overview and allocations iii. Complete Systematic Investment Plans (SIPs) Book details – Active, Expir"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ing, Ceased etc. iv. Systematic Transfer Plans (STPs) overview and allocations v. Complete Systematic Transfer Plans (STPs) Book details – Active & Completed. vi. Systematic Withdrawal Plans (SWPs) overview and allocations vii. Complete Systematic Withdrawal Plans (SWPs) Book details – Active & Comp"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "leted. 3. I had recently placed a request to register a SIP for one my investor but I can’t see it in the report. How can I validate it? a. While we are fetching all your data directly from the RTAs to provide you glitch free experience, there can be a possibility that we \nmay have interpreted any d"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "ata point incorrectly due to multiple reasons. For all such cases, you can share your concern with us on this email id – support@compoundexpress.com (to be confirmed). 4. Can I customize the reports? a. You can apply filters on various tables and charts present in the report to analyse the reports. "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "The facility to create custom reports is not present currently. 5. How often are the reports updated? a. The data points present in the reports are being updated on each business day after the posting cycle of respective RTAs is completed. 6. How does the platform access my data? a. As part of the o"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "nboarding process, you have provided us consent to fetch your data from the respective RTAs and the same gets updated on each business day after the posting cycle of respective RTAs is completed. 7. Who can access these reports? a. Only authorized users can access this data. Authorised users include"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " the MFD and those employees of MFD whom they have extended the access of Compoundexpress platform. The MFD has full control on which user can access which feature of the platform. 8. I can see error in the data being displayed. How can I report this? a. While we are fetching all your data directly "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "from the RTAs to provide you glitch free experience, there can be a possibility that we may have interpreted any data point incorrectly due to multiple reasons. For all such cases, you can share your concern with us on this email id – support@compoundexpress.com (to be confirmed).  Investor Reports "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "1. Where can I see my Investor Reports? a. Go to Left menu > Mutual Funds > Reports > Investor Reports. \n2. What are the different reports does the platform offer for Investor Reports? a. The platform offers a variety of investor reports, including: i. Investor overall summary ii. List of all mutual"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " fund investors iii. Individual investor details 3. For any of my investor, can I also see his mutual fund investments done by other MFDs or under Direct plan? If any. a. This facility is not available currently. But we are working towards launching this feature very soon. 4. Can I customize the rep"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "orts? a. You can apply filters on various tables and charts present in the report to analyse the reports. The facility to create custom reports is not present currently. 5. How often are the reports updated? a. The data points present in the reports are being updated on each business day after the p"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "osting cycle of respective RTAs is completed. 6. How does the platform access my data? a. As part of the onboarding process, you have provided us consent to fetch your data from the respective RTAs and the same gets updated on each business day after the posting cycle of respective RTAs is completed"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": ". 7. Who can access these reports? a. Only authorized users can access this data. Authorised users include the MFD and those employees of MFD whom they have extended the access of Compoundexpress platform. The MFD has full control on which user can access which feature of the platform. 8. I can see "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "error in the data being displayed. How can I report this? a. While we are fetching all your data directly from the RTAs to provide you glitch free experience, there can be a possibility that we may have interpreted any data point incorrectly due to multiple reasons. For all such cases, you can share"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " your concern with us on \nthis email id – support@compoundexpress.com (to be confirmed).  Brokerage Reports 1. Where can I see my Brokerage Reports? a. Go to Left menu > Mutual Funds > Reports > Brokerage Reports. 2. What are the different reports does the platform offer for Brokerage Reports? a. Th"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "e platform offers a variety of brokerage reports, including: i. Brokerage overall summary (Monthly level payouts) with Investor wise brokerage details b. AMC level brokerage summary with Fund level information 3. I have received brokerage amount less than the agreed rate with a particular AMC. Can I"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": " reconcile the brokerage report against my rate card? a. This facility is not available currently. But we are working towards launching this feature very soon. 4. Can I customize the reports? a. You can apply filters on various tables and charts present in the report to analyse the reports. The faci"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "lity to create custom reports is not present currently. 5. How often are the reports updated? a. The data points present in the brokerage reports are being updated on monthly basis after the posting cycle of respective RTA is completed. 6. How does the platform access my data? a. As part of the onbo"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "arding process, you have provided us consent to fetch your data from the respective RTAs and the same gets updated on each business day after the posting cycle of respective RTAs is completed. 7. Who can access these reports? a. Only authorized users can access this data. Authorised users include th"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "e MFD and those employees of MFD whom they have extended the access of Compoundexpress platform. The \nMFD has full control on which user can access which feature of the platform. 8. I can see error in the data being displayed. How can I report this? a. While we are fetching all your data directly fr"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "om the RTAs to provide you glitch free experience, there can be a possibility that we may have interpreted any data point incorrectly due to multiple reasons. For all such cases, you can share your concern with us on this email id – support@compoundexpress.com (to be confirmed).  Sales Report 1. Whe"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "re can I see my Sales Report? a. Go to Left menu > Mutual Funds > Reports > Sales. 2. What is the source of this Sales data? a. This report is being curated by Compoundexpress based on the data received from RTA’s end for your ARN. Various WBR and MFSD data files are being consumed for populating th"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "is report. 3. What is the difference between Gross Sales and Net Sales? a. Gross Sales is the total value of all mutual fund units sold by the MFD during a specific period while Net Sales is the total value of mutual fund units sold after accounting for redemptions, SWPs, cancellations, reversals an"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "d other transaction types and statuses. 4. Can I customize the reports? a. You can apply filters on various tables and charts present in the report to analyse the report. The facility to create custom reports is not present currently. 5. How often are the reports updated? a. The data points present "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "in the reports are being updated on each business day after the posting cycle of respective RTAs is completed. 6. How does the platform access my data? a. As part of the onboarding process, you have provided us consent to fetch your data from the respective RTAs and the same gets \nupdated on each bu"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "siness day after the posting cycle of respective RTAs is completed. 7. Who can access these reports? a. Only authorized users can access this data. Authorised users include the MFD and those employees of MFD whom they have extended the access of Compoundexpress platform. The MFD has full control on "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "which user can access which feature of the platform. 8. I can see error in the data being displayed. How can I report this? a. While we are fetching all your data directly from the RTAs to provide you glitch free experience, there can be a possibility that we may have interpreted any data point inco"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "rrectly due to multiple reasons. For all such cases, you can share your concern with us on this email id – support@compoundexpress.com (to be confirmed). MF Product Catalogue  1. Where can I see my mutual fund scheme details? a. Go to Left menu > Mutual Funds > Fund > Explore Funds. 2. What are the "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "different categories of mutual fund schemes data available on the platform? a. The platform lists mutual fund schemes across all asset classes and categories, such as: i. Equity ii. Debt iii. Hybrid iv. Commodity and others. 3. What is an NFO or New Fund Offer? a. A New Fund Offer (NFO) is the initi"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "al period when a new mutual fund scheme is launched. During this period, investors can subscribe to the fund by purchasing its units. 4. What is the meaning of Minimum Investment Amount mentioned for each mutual fund scheme? a. The Minimum Investment Amount for a mutual fund scheme is the smallest a"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "mount of money you need to invest in that particular scheme. Some schemes have a very low minimum investment, while others may require a higher \namount. The minimum investment amount varies for lumpsum and SIP investments. 5. Which plans are available on Compoundexpress to transact in a mutual fund "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "scheme? a. Compoundexpress currently only supports the \"Regular Plan\" for all mutual fund schemes. 6. Can i download a detailed summary of a mutual fund scheme? a. Yes, you can download a PDF file called ‘Fund Card’ for any mutual fund scheme. A Fund Card is a concise summary that provides key infor"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "mation about a specific mutual fund scheme. It's a valuable tool for quickly assessing a fund's characteristics and making informed investment decisions. Fund cards offer a standardized format for comparing different funds and understanding their potential risks and rewards. They typically include t"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "he following information: § Fund Name and Category § Riskometer § Fund Manager § Investment Objective § Asset Allocation § Historical Performance § Expense Ratio § Exit Load 7. What is Expense Ratio? a. The expense ratio is a fee charged by a mutual fund to cover its operating expenses. 8. What is E"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "xit Load? a. An exit load is a fee charged by a mutual fund when you redeem your units before a certain period. It is different for each mutual fund scheme. 9. Can I customize the reports? a. You can use the filters on the page to analyze the data or find specific mutual fund schemes. The facility t"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "o create custom reports is not available. 10. How often are the reports updated? \na. The data points present on all mutual fund scheme pages are being updated on each business day after the posting cycle of respective RTAs is completed. 11. Who can access the mutual fund catalogue pages? a. Only aut"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "horized users can access this data. Authorised users include the MFD and those employees of MFD whom they have extended the access of Compoundexpress platform. The MFD has full control on which user can access which feature of the platform. 12. I can see error in the data being displayed. How can I "
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "report this? a. While we are sourcing mutual fund schemes data directly from data providers to provide you glitch free experience, there can be a possibility that we may have interpreted any data point incorrectly due to multiple reasons. For all such cases, you can share your concern with us on thi"
+  },
+  {
+    "source": "CE FAQs - Updated.pdf",
+    "text": "s email id – support@compoundexpress.com (to be confirmed).  \n"
+  }
+]

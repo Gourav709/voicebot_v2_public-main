@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "openai": "^6.43.0"
+  }
+}
