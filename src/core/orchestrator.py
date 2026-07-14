@@ -257,9 +257,16 @@ class OrchestratorV2:
         ]
 
     def _call_llm(self, user_text: str) -> Dict[str, Any]:
-        
+        original_language = self._current_language
         try:
-            raw  = self.llm.complete(self._build_messages(user_text))
+            english_text = user_text
+
+            if original_language != "en-IN":
+               english_text = self.llm.translate_to_english(user_text)
+
+            raw = self.llm.complete(
+               self._build_messages(english_text)
+)
            
             self.logger.log("llm_raw", {"raw": raw})
             plan = safe_json_loads(raw)

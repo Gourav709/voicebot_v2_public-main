@@ -13,7 +13,7 @@ import threading
 import time
 import requests
 from typing import Callable, Optional, Tuple
-
+from src.providers.language_detector import LanguageDetector
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Batch STT (original — unchanged)
@@ -181,7 +181,7 @@ class DeepgramStreamingSTT:
     WS_URL_TEMPLATE = (
     "wss://api.deepgram.com/v1/listen"
     "?model={model}"
-    "&language=hi"
+    "&language=en"
     "&punctuate=true"
     "&smart_format=true"
     "&encoding=linear16"
@@ -227,7 +227,7 @@ class DeepgramStreamingSTT:
             "total_processing_sec": 0.0,
             "errors": 0,
         }
-
+        self.language_detector = LanguageDetector()
     # ── Public API ────────────────────────────────────────────────────────────
 
     def start(self) -> bool:
@@ -336,6 +336,10 @@ class DeepgramStreamingSTT:
          parts.append(last_fragment)
 
         full_transcript = " ".join(parts).strip()
+
+        print("\n========== RAW STT ==========")
+        print(full_transcript)
+        print("=============================\n")
 
         if not full_transcript:
          return
