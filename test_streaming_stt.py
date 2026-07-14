@@ -24,7 +24,7 @@ if not API_KEY:
 WS_URL = (
     "wss://api.deepgram.com/v1/listen"
     "?model=nova-2-general"
-    "&language=hi"
+    "&language=en"
     "&punctuate=true"
     "&smart_format=true"
     "&encoding=linear16"
